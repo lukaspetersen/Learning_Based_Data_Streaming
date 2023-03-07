@@ -46,7 +46,10 @@ public class App {
             stringArr.add(nextLine[6]);
         }
 
-        // Creating a hashmap and then keySet just to only get unique values for displaying
+
+        // ------------Count-Min Sketch------------
+
+        // Creating a hashmap and then keySet just to only get unique values for displaying (just for running through a unique array)
         Map<String, Integer> stringToIntMap = new HashMap<>();
         for(String elem : stringArr){
             Integer mapIndex = 0;
@@ -64,7 +67,6 @@ public class App {
             countMinSketch.add(neighborhoodInt, 1);
         }
 
-
         //Calculating actual frequency
         Map<String, Long> actualFrequency = stringArr.stream()
                 .collect(Collectors.groupingBy(s -> s, Collectors.counting()));
@@ -75,7 +77,6 @@ public class App {
             // key string to int
             byte[] bytes = neighborhood.getBytes();
             int neighborhoodInt = ByteBuffer.wrap(bytes).getInt();
-
             System.out.println(" " + neighborhood + "-- Estimated Frequency: " + countMinSketch.estimateCount(neighborhoodInt)
             + " --ACTUAL FREQUENCY: " + actualFrequency.get(neighborhood));
 
@@ -83,9 +84,34 @@ public class App {
         }
 
         System.out.println("------");
-        System.out.println("Complete number of neighborhoods: " + completeNumber);
+        System.out.println("Complete number of neighborhoods -> " + completeNumber);
+
+
+        /*---------------Bloom filter-------------------*/
+        BloomFilter bloomFilter = new BloomFilter(120, 5);
+
+        for(String neighborhood : stringArr){
+            byte[] bytes = neighborhood.getBytes();
+            int neighborhoodInt = ByteBuffer.wrap(bytes).getInt();
+            bloomFilter.add(neighborhoodInt);
+        }
+
+        byte[] bytes = "Neverland".getBytes();
+        int neighborhoodInt = ByteBuffer.wrap(bytes).getInt();
+        System.out.println(bloomFilter.contains(neighborhoodInt));
 
 
     }
 
 }
+
+/*
+BACKLOG
+
+
+1) Create bloom filter
+2) Implement heavy hitters on top of count-min sketch
+3) Create basic ML Classifier
+
+
+ */
