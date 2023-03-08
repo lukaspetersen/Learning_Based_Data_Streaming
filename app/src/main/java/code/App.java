@@ -87,15 +87,39 @@ public class App {
         System.out.println("Complete number of neighborhoods -> " + completeNumber);
 
 
+        //---------------Heavy Hitters -----------------------
+
+        ArrayList<String> heavyHittersList = new ArrayList<>();
+        HeavyHittersCountMin heavyHitters = new HeavyHittersCountMin(8000, countMinSketch, heavyHittersList);
+        for(String neighborhood : keySet){
+
+            //Type conversion
+            byte[] bytes = neighborhood.getBytes();
+            int neighborhoodInt = ByteBuffer.wrap(bytes).getInt();
+
+            heavyHitters.update(neighborhoodInt);
+        }
+
+        //Show list of heavy hitters
+        heavyHittersList = heavyHitters.query();
+        System.out.println("-- List of heavy hitters -- ");
+        for(String elem : heavyHittersList){
+            System.out.println(elem);
+        }
+
+
         /*---------------Bloom filter-------------------*/
+
         BloomFilter bloomFilter = new BloomFilter(120, 5);
 
+        //Adding elements to bloom filter
         for(String neighborhood : stringArr){
             byte[] bytes = neighborhood.getBytes();
             int neighborhoodInt = ByteBuffer.wrap(bytes).getInt();
             bloomFilter.add(neighborhoodInt);
         }
 
+        //Seeing if set contains element
         byte[] bytes = "Neverland".getBytes();
         int neighborhoodInt = ByteBuffer.wrap(bytes).getInt();
         System.out.println(bloomFilter.contains(neighborhoodInt));
@@ -104,14 +128,3 @@ public class App {
     }
 
 }
-
-/*
-BACKLOG
-
-
-1) Create bloom filter
-2) Implement heavy hitters on top of count-min sketch
-3) Create basic ML Classifier
-
-
- */
