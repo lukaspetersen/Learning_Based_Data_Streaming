@@ -11,3 +11,4 @@
   - [ ] Needs another type conversion. Maybe hashcodes?
 - [ ] New Data set
 - [ ] Create basic ML classifier
+- [ ] Refactor and clean-up
