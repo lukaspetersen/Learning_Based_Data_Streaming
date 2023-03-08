@@ -17,24 +17,6 @@ public class App {
     public static void main(String[] args) throws IOException, CsvValidationException {
 
 
-        //----------Simple Example------------
-/*
-        int[] dataStream = {1, 2, 3, 2, 1, 4, 5, 1,1, 2, 3, 2, 1, 4, 5, 1,1, 2, 3, 2, 1, 4, 5, 1,1,2,3,4,5,6,7,8,9};
-        CountMinSketch countMinSketch = new CountMinSketch(10, 10, 1000003);
-        for (int item : dataStream) {
-            countMinSketch.add(item, 1);
-        }
-
-        int[] actualFrequency = new int[10];
-        for (int item : dataStream) {
-            actualFrequency[item]++;
-        }
-
-        for (int i = 1; i <= 9; i++) {
-            System.out.println("Item: " + i + " Actual frequency: " + actualFrequency[i] + " Estimated frequency: " + countMinSketch.estimateCount(i));
-        }
- */
-
         // ------------Real Dataset (AirBnB)------------
 
         //Importing csv in java (openCSV dependency has also been added)
@@ -45,7 +27,6 @@ public class App {
         while ((nextLine = reader.readNext()) != null) {
             stringArr.add(nextLine[6]);
         }
-
 
         // ------------Count-Min Sketch------------
 
@@ -106,7 +87,6 @@ public class App {
         for(String elem : heavyHittersList){
             System.out.println(elem);
         }
-
 
         /*---------------Bloom filter-------------------*/
 
