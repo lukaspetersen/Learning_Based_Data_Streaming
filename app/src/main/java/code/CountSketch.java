@@ -3,11 +3,11 @@ import java.util.Random;
 
 class CountMinSketch {
     private final int[][] table;
-    private final int[] hashA;
-    private final int[] hashB;
+    private final int[] hashA; // long
+    private final int[] hashB; // long
     private final int depth;
     private final int width;
-    private final int prime;
+    private final int prime; // long
     private final Random rand;
 
     public CountMinSketch(int depth, int width, int prime) {
@@ -27,7 +27,7 @@ class CountMinSketch {
 
     public void add(int item, int count) {
         for (int i = 0; i < depth; i++) {
-            int index = (hashA[i] * item + hashB[i]) % prime;
+            int index = (hashA[i] * item + hashB[i]) % prime; // index long
             index = Math.floorMod(index, width);
             table[i][index] += count;
         }

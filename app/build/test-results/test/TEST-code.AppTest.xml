@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="code.AppTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-03-08T20:33:05" hostname="Fredriks-MacBook-Pro.local" time="0.008">
+<testsuite name="code.AppTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-03-09T07:20:37" hostname="Fredriks-MacBook-Pro.local" time="0.011">
   <properties/>
-  <testcase name="stringShouldBecomeStringAgain" classname="code.AppTest" time="0.008"/>
+  <testcase name="stringShouldBecomeStringAgain" classname="code.AppTest" time="0.011"/>
   <system-out><![CDATA[Original String : Hello my name is... slim shady!
 recreated: Hello my name is... slim shady!
 ]]></system-out>
