@@ -6,7 +6,6 @@ import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;
 
 import java.io.*;
-import java.nio.ByteBuffer;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -40,10 +39,7 @@ public class App {
         // Add item frequency to the count-min sketch data structure
         CountMinSketch countMinSketch = new CountMinSketch(20, 15, 1000003);
         for (String neighborhood : stringArr) {
-            // convert string to int (or bytes first)
-            byte[] bytes = neighborhood.getBytes();
-            int neighborhoodInt = ByteBuffer.wrap(bytes).getInt();
-            countMinSketch.add(neighborhoodInt, 1);
+            countMinSketch.add(neighborhood, 1);
         }
 
         //Calculating actual frequency
@@ -53,10 +49,7 @@ public class App {
         int completeNumber = 0;
         //Printing Estimated frequencies and Actual frequencies
         for(String neighborhood : keySet){
-            // key string to int
-            byte[] bytes = neighborhood.getBytes();
-            int neighborhoodInt = ByteBuffer.wrap(bytes).getInt();
-            System.out.println(" " + neighborhood + "-- Estimated Frequency: " + countMinSketch.estimateCount(neighborhoodInt)
+            System.out.println(" " + neighborhood + "-- Estimated Frequency: " + countMinSketch.estimateCount(neighborhood)
             + " --ACTUAL FREQUENCY: " + actualFrequency.get(neighborhood));
 
             completeNumber += actualFrequency.get(neighborhood);
@@ -69,14 +62,9 @@ public class App {
         //---------------Heavy Hitters -----------------------
 
         ArrayList<String> heavyHittersList = new ArrayList<>();
-        HeavyHittersCountMin heavyHitters = new HeavyHittersCountMin(8000, countMinSketch, heavyHittersList);
+        HeavyHittersCountMin heavyHitters = new HeavyHittersCountMin(5000, countMinSketch, heavyHittersList);
         for(String neighborhood : keySet){
-
-            //Type conversion
-            byte[] bytes = neighborhood.getBytes();
-            int neighborhoodInt = ByteBuffer.wrap(bytes).getInt();
-
-            heavyHitters.update(neighborhoodInt);
+            heavyHitters.update(neighborhood);
         }
 
         //Show list of heavy hitters
@@ -88,6 +76,7 @@ public class App {
 
         /*---------------Bloom filter-------------------*/
 
+        /*
         BloomFilter bloomFilter = new BloomFilter(120, 5);
 
         //Adding elements to bloom filter
@@ -101,8 +90,7 @@ public class App {
         byte[] bytes = "Neverland".getBytes();
         int neighborhoodInt = ByteBuffer.wrap(bytes).getInt();
         System.out.println(bloomFilter.contains(neighborhoodInt));
-
-
+*/
     }
 
 }

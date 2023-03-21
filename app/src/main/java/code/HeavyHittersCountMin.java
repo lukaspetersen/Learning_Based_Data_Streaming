@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 public class HeavyHittersCountMin {
 
+
     private CountMinSketch countMinSketch;
     private ArrayList<String> heavyHitters;
     private int threshold;
@@ -15,12 +16,10 @@ public class HeavyHittersCountMin {
         this.heavyHitters = heavyHitters;
     }
 
-    public void update(int item){
+    public void update(String item){
         int itemFrequency = countMinSketch.estimateCount(item);
         if(itemFrequency > threshold){
-            byte[] originalBytes = ByteBuffer.allocate(4).putInt(item).array();
-            String itemString = new String(originalBytes);
-            heavyHitters.add(itemString);
+            heavyHitters.add(item);
         }
     }
 

@@ -25,18 +25,18 @@ class CountMinSketch {
         }
     }
 
-    public void add(int item, int count) {
+    public void add(String item, int count) {
         for (int i = 0; i < depth; i++) {
-            int index = (hashA[i] * item + hashB[i]) % prime; // index long
+            int index = (hashA[i] * item.hashCode() + hashB[i]) % prime; // index long
             index = Math.floorMod(index, width);
             table[i][index] += count;
         }
     }
 
-    public int estimateCount(int item) {
+    public int estimateCount(String item) {
         int minCount = Integer.MAX_VALUE;
         for (int i = 0; i < depth; i++) {
-            int index = (hashA[i] * item + hashB[i]) % prime;
+            int index = (hashA[i] * item.hashCode() + hashB[i]) % prime;
             index = Math.floorMod(index, width);
             minCount = Math.min(minCount, table[i][index]);
         }
