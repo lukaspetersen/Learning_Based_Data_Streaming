@@ -76,21 +76,15 @@ public class App {
 
         /*---------------Bloom filter-------------------*/
 
-        /*
-        BloomFilter bloomFilter = new BloomFilter(120, 5);
 
+        BloomFilter bloomFilter = new BloomFilter(120, 5);
         //Adding elements to bloom filter
         for(String neighborhood : stringArr){
-            byte[] bytes = neighborhood.getBytes();
-            int neighborhoodInt = ByteBuffer.wrap(bytes).getInt();
-            bloomFilter.add(neighborhoodInt);
+            bloomFilter.add(neighborhood);
         }
 
-        //Seeing if set contains element
-        byte[] bytes = "Neverland".getBytes();
-        int neighborhoodInt = ByteBuffer.wrap(bytes).getInt();
-        System.out.println(bloomFilter.contains(neighborhoodInt));
-*/
+        System.out.println(bloomFilter.contains("Islington"));
+
     }
 
 }

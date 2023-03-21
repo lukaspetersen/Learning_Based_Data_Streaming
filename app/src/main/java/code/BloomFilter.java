@@ -15,16 +15,16 @@ public class BloomFilter {
         this.bitSet = new BitSet(size);
     }
 
-    public void add(int item){
+    public void add(String item){
         for(int i=0; i<hashFunctions; i++){
-            int index = Math.abs(i*item)%size; // Needs a better hash function
+            int index = Math.abs(i*item.hashCode())%size; // Needs a better hash function
             bitSet.set(index, true);
         }
     }
 
-    public String contains(int item){
+    public String contains(String item){
         for(int i=0; i<hashFunctions; i++){
-            int index = Math.abs(i*item)%size;
+            int index = Math.abs(i*item.hashCode())%size;
             if(!bitSet.get(index)){
                 return "Element not in set";
             }
