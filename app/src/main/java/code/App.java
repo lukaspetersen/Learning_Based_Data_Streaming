@@ -58,7 +58,6 @@ public class App {
         System.out.println("------");
         System.out.println("Complete number of neighborhoods -> " + completeNumber);
 
-
         //---------------Heavy Hitters -----------------------
 
         ArrayList<String> heavyHittersList = new ArrayList<>();
@@ -75,7 +74,6 @@ public class App {
         }
 
         /*---------------Bloom filter-------------------*/
-
 
         BloomFilter bloomFilter = new BloomFilter(120, 5);
         //Adding elements to bloom filter
