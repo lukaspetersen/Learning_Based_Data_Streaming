@@ -25,6 +25,20 @@ public class App {
             stringArr.add(nextLine[6]);
         }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /*
         // ------------Count-Min Sketch------------
 
         // Creating a hashmap and then keySet just to only get unique values for displaying (just for running through a unique array)
@@ -75,6 +89,7 @@ public class App {
 
         /*---------------Bloom filter-------------------*/
 
+        /*
         BloomFilter bloomFilter = new BloomFilter(120, 5);
         //Adding elements to bloom filter
         for(String neighborhood : stringArr){
@@ -82,7 +97,7 @@ public class App {
         }
 
         System.out.println(bloomFilter.contains("Islington"));
-
+*/
     }
 
 }
