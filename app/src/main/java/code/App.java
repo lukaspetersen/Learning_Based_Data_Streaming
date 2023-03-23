@@ -13,10 +13,9 @@ public class App {
 
     public static void main(String[] args) throws IOException, CsvValidationException {
 
+        double epsilon = 0.01;
 
-        // ------------Real Dataset (AirBnB)------------
-
-        //Importing csv in java (openCSV dependency has also been added)
+        // ------------Importing dataset (AirBnB)------------
         InputStreamReader streamReader = new InputStreamReader(App.class.getClassLoader().getResourceAsStream("listings.csv"));
         CSVReader reader = new CSVReader(streamReader);
         String[] nextLine;
@@ -25,9 +24,11 @@ public class App {
             stringArr.add(nextLine[6]);
         }
 
-
-
-
+        //Preprocessing
+        HashMap<String, Integer> stringToInt = stringToInt(stringArr);
+        for(String s : stringToInt.keySet()){
+            System.out.println(stringToInt.get(s));
+        }
 
 
 
@@ -100,4 +101,15 @@ public class App {
 */
     }
 
-}
+    public static HashMap<String, Integer> stringToInt(List<String> stringArr){
+        int index = 0;
+        HashMap<String, Integer> hashMap = new HashMap<>();
+        for(String s : stringArr){
+            if(!hashMap.containsKey(s)){
+                hashMap.put(s, index);
+                index++;
+            }
+        }
+        return hashMap;
+        }
+    }
