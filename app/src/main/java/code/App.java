@@ -29,9 +29,16 @@ public class App {
         List<Integer> listToInt = listToInt(stringArr, stringToInt);
 
 
+        //Heavy hitters implementation
 
 
 
+
+
+
+
+        //Postprocessing
+        List<String> listToString = listToString(stringToInt, listToInt);
 
 
         /*
@@ -116,4 +123,20 @@ public class App {
         }
         return hashMap;
         }
+
+
+    public static List<String> listToString(HashMap<String, Integer> stringToInt, List<Integer> listToInt){
+        ArrayList<String> output = new ArrayList<>();
+        HashMap<Integer,String> tempHashMap = new HashMap<>();
+        for(String s : stringToInt.keySet()){
+            tempHashMap.put(stringToInt.get(s), s);
+        }
+
+        for(int i : listToInt){
+            output.add(tempHashMap.get(i));
+        }
+
+        return output;
+    }
+
     }
