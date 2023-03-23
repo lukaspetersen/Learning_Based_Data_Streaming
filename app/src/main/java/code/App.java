@@ -26,12 +26,7 @@ public class App {
 
         //Preprocessing
         HashMap<String, Integer> stringToInt = stringToInt(stringArr);
-        for(String s : stringToInt.keySet()){
-            System.out.println(stringToInt.get(s));
-        }
-
-
-
+        List<Integer> listToInt = listToInt(stringArr, stringToInt);
 
 
 
@@ -100,6 +95,15 @@ public class App {
         System.out.println(bloomFilter.contains("Islington"));
 */
     }
+
+    public static List<Integer> listToInt(List<String> stringArr, HashMap<String, Integer> stringToInt){
+        ArrayList<Integer> output = new ArrayList<>();
+        for(String s : stringArr){
+            output.add(stringToInt.get(s));
+        }
+        return output;
+    }
+
 
     public static HashMap<String, Integer> stringToInt(List<String> stringArr){
         int index = 0;
