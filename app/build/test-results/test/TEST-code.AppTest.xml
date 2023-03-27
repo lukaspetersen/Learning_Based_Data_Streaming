@@ -1,12 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="code.AppTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-03-27T08:56:24" hostname="Fredriks-MacBook-Pro.local" time="0.006">
+<testsuite name="code.AppTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-03-27T10:41:19" hostname="Fredriks-MacBook-Pro.local" time="0.064">
   <properties/>
-  <testcase name="stringShouldBecomeStringAgain" classname="code.AppTest" time="0.006"/>
-  <system-out><![CDATA[code.CountMinSketch@35cabb2a
-code.CountMinSketch@564fabc8
-code.CountMinSketch@16d04d3d
-code.CountMinSketch@49ec71f8
-code.CountMinSketch@1d2adfbe
+  <testcase name="testCountMinUpdate" classname="code.AppTest" time="0.064"/>
+  <system-out><![CDATA[This is cm number 0
+Count of item 0 --> 51
+This is cm number 1
+Count of item 0 --> 51
+This is cm number 2
+Count of item 0 --> 51
+This is cm number 3
+Count of item 0 --> 51
+This is cm number 4
+Count of item 0 --> 51
+This is cm number 5
+Count of item 0 --> 51
+This is cm number 6
+Count of item 0 --> 51
+This is cm number 7
+Count of item 0 --> 51
+This is cm number 8
+Count of item 0 --> 51
+This is cm number 9
+Count of item 0 --> 51
+This is cm number 10
+Count of item 0 --> 51
+This is cm number 11
+Count of item 0 --> 51
+This is cm number 12
+Count of item 0 --> 51
+This is cm number 13
+Count of item 0 --> 51
+This is cm number 14
+Count of item 0 --> 51
+This is cm number 15
+Count of item 0 --> 51
+This is cm number 16
+Count of item 0 --> 51
+This is cm number 17
+Count of item 0 --> 51
+This is cm number 18
+Count of item 0 --> 51
+This is cm number 19
+Count of item 0 --> 51
+This is cm number 20
+Count of item 0 --> 51
+This is cm number 21
+Count of item 0 --> 51
+This is cm number 22
+Count of item 0 --> 51
+This is cm number 23
+Count of item 0 --> 51
+This is cm number 24
+Count of item 0 --> 51
+This is cm number 25
+Count of item 0 --> 51
+This is cm number 26
+Count of item 0 --> 51
+This is cm number 27
+Count of item 0 --> 51
+This is cm number 28
+Count of item 0 --> 51
+This is cm number 29
+Count of item 0 --> 51
+This is cm number 30
+Count of item 0 --> 51
+This is cm number 31
+Count of item 0 --> 51
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

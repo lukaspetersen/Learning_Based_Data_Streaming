@@ -13,25 +13,35 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class AppTest {
 
     @Test
-    public void countMinTest(){
+    public void testCountMinUpdate(){
 
-        ArrayList<CountMinSketch> cms = new ArrayList<>();
+        //Create heavy hitter object
+        NewHeavyHitters hh = new NewHeavyHitters(5);
 
-        CountMinSketch cm1 = new CountMinSketch(20, 15, 1000003);
-        CountMinSketch cm2 = new CountMinSketch(20, 15, 1000003);
-        CountMinSketch cm3 = new CountMinSketch(20, 15, 1000003);
-        CountMinSketch cm4 = new CountMinSketch(20, 15, 1000003);
-        CountMinSketch cm5 = new CountMinSketch(20, 15, 1000003);
-
-        cms.add(cm1);
-        cms.add(cm2);
-        cms.add(cm3);
-        cms.add(cm4);
-        cms.add(cm5);
-
-        for(CountMinSketch cm : cms){
-            System.out.println(cm);
+        //Initialize 32 HH count mins
+        hh.cms = new CountMinSketch[32];
+        for(int i = 0; i<32; i++){
+             hh.cms[i] = new CountMinSketch(20, 15, 1000003);
         }
+
+        //Adds two items to every countMin in HH
+        for(CountMinSketch cm : hh.cms){
+            cm.add(0, 1);
+        }
+
+        //Update heavy hitter
+        hh.update(0, 50);
+
+
+        // Check values of heavy hitter count mins
+        int index = 0;
+        for(CountMinSketch cm : hh.cms){
+            System.out.println("This is cm number " + index);
+            System.out.println("Count of item 0 --> " + cm.estimateCount(0));
+            index++;
+        }
+
+
 
     }
 
