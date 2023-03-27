@@ -1,71 +1,295 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="code.AppTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-03-27T10:41:19" hostname="Fredriks-MacBook-Pro.local" time="0.064">
+<testsuite name="code.AppTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-03-27T11:41:21" hostname="Fredriks-MacBook-Pro.local" time="0.075">
   <properties/>
-  <testcase name="testCountMinUpdate" classname="code.AppTest" time="0.064"/>
-  <system-out><![CDATA[This is cm number 0
-Count of item 0 --> 51
-This is cm number 1
-Count of item 0 --> 51
-This is cm number 2
-Count of item 0 --> 51
-This is cm number 3
-Count of item 0 --> 51
-This is cm number 4
-Count of item 0 --> 51
-This is cm number 5
-Count of item 0 --> 51
-This is cm number 6
-Count of item 0 --> 51
-This is cm number 7
-Count of item 0 --> 51
-This is cm number 8
-Count of item 0 --> 51
-This is cm number 9
-Count of item 0 --> 51
-This is cm number 10
-Count of item 0 --> 51
-This is cm number 11
-Count of item 0 --> 51
-This is cm number 12
-Count of item 0 --> 51
-This is cm number 13
-Count of item 0 --> 51
-This is cm number 14
-Count of item 0 --> 51
-This is cm number 15
-Count of item 0 --> 51
-This is cm number 16
-Count of item 0 --> 51
-This is cm number 17
-Count of item 0 --> 51
-This is cm number 18
-Count of item 0 --> 51
-This is cm number 19
-Count of item 0 --> 51
-This is cm number 20
-Count of item 0 --> 51
-This is cm number 21
-Count of item 0 --> 51
-This is cm number 22
-Count of item 0 --> 51
-This is cm number 23
-Count of item 0 --> 51
-This is cm number 24
-Count of item 0 --> 51
-This is cm number 25
-Count of item 0 --> 51
-This is cm number 26
-Count of item 0 --> 51
-This is cm number 27
-Count of item 0 --> 51
-This is cm number 28
-Count of item 0 --> 51
-This is cm number 29
-Count of item 0 --> 51
-This is cm number 30
-Count of item 0 --> 51
-This is cm number 31
-Count of item 0 --> 51
+  <testcase name="testCountMinUpdate" classname="code.AppTest" time="0.075"/>
+  <system-out><![CDATA[--------This is cm number 0------------------
+Count min 0 -->0
+Count min 1 -->0
+Count min 2 -->0
+Count min 3 -->0
+Count min 4 -->0
+Count min 5 -->0
+Count min 6 -->0
+Count min 7 -->1
+--------This is cm number 1------------------
+Count min 0 -->0
+Count min 1 -->0
+Count min 2 -->0
+Count min 3 -->1
+Count min 4 -->0
+Count min 5 -->0
+Count min 6 -->0
+Count min 7 -->0
+--------This is cm number 2------------------
+Count min 0 -->0
+Count min 1 -->1
+Count min 2 -->0
+Count min 3 -->0
+Count min 4 -->0
+Count min 5 -->0
+Count min 6 -->0
+Count min 7 -->0
+--------This is cm number 3------------------
+Count min 0 -->1
+Count min 1 -->0
+Count min 2 -->0
+Count min 3 -->0
+Count min 4 -->0
+Count min 5 -->0
+Count min 6 -->0
+Count min 7 -->0
+--------This is cm number 4------------------
+Count min 0 -->1
+Count min 1 -->0
+Count min 2 -->0
+Count min 3 -->0
+Count min 4 -->0
+Count min 5 -->0
+Count min 6 -->0
+Count min 7 -->0
+--------This is cm number 5------------------
+Count min 0 -->1
+Count min 1 -->0
+Count min 2 -->0
+Count min 3 -->0
+Count min 4 -->0
+Count min 5 -->0
+Count min 6 -->0
+Count min 7 -->0
+--------This is cm number 6------------------
+Count min 0 -->1
+Count min 1 -->0
+Count min 2 -->0
+Count min 3 -->0
+Count min 4 -->0
+Count min 5 -->0
+Count min 6 -->0
+Count min 7 -->0
+--------This is cm number 7------------------
+Count min 0 -->1
+Count min 1 -->0
+Count min 2 -->0
+Count min 3 -->0
+Count min 4 -->0
+Count min 5 -->0
+Count min 6 -->0
+Count min 7 -->0
+--------This is cm number 8------------------
+Count min 0 -->1
+Count min 1 -->0
+Count min 2 -->0
+Count min 3 -->0
+Count min 4 -->0
+Count min 5 -->0
+Count min 6 -->0
+Count min 7 -->0
+--------This is cm number 9------------------
+Count min 0 -->1
+Count min 1 -->0
+Count min 2 -->0
+Count min 3 -->0
+Count min 4 -->0
+Count min 5 -->0
+Count min 6 -->0
+Count min 7 -->0
+--------This is cm number 10------------------
+Count min 0 -->1
+Count min 1 -->0
+Count min 2 -->0
+Count min 3 -->0
+Count min 4 -->0
+Count min 5 -->0
+Count min 6 -->0
+Count min 7 -->0
+--------This is cm number 11------------------
+Count min 0 -->1
+Count min 1 -->0
+Count min 2 -->0
+Count min 3 -->0
+Count min 4 -->0
+Count min 5 -->0
+Count min 6 -->0
+Count min 7 -->0
+--------This is cm number 12------------------
+Count min 0 -->1
+Count min 1 -->0
+Count min 2 -->0
+Count min 3 -->0
+Count min 4 -->0
+Count min 5 -->0
+Count min 6 -->0
+Count min 7 -->0
+--------This is cm number 13------------------
+Count min 0 -->1
+Count min 1 -->0
+Count min 2 -->0
+Count min 3 -->0
+Count min 4 -->0
+Count min 5 -->0
+Count min 6 -->0
+Count min 7 -->0
+--------This is cm number 14------------------
+Count min 0 -->1
+Count min 1 -->0
+Count min 2 -->0
+Count min 3 -->0
+Count min 4 -->0
+Count min 5 -->0
+Count min 6 -->0
+Count min 7 -->0
+--------This is cm number 15------------------
+Count min 0 -->1
+Count min 1 -->0
+Count min 2 -->0
+Count min 3 -->0
+Count min 4 -->0
+Count min 5 -->0
+Count min 6 -->0
+Count min 7 -->0
+--------This is cm number 16------------------
+Count min 0 -->1
+Count min 1 -->0
+Count min 2 -->0
+Count min 3 -->0
+Count min 4 -->0
+Count min 5 -->0
+Count min 6 -->0
+Count min 7 -->0
+--------This is cm number 17------------------
+Count min 0 -->1
+Count min 1 -->0
+Count min 2 -->0
+Count min 3 -->0
+Count min 4 -->0
+Count min 5 -->0
+Count min 6 -->0
+Count min 7 -->0
+--------This is cm number 18------------------
+Count min 0 -->1
+Count min 1 -->0
+Count min 2 -->0
+Count min 3 -->0
+Count min 4 -->0
+Count min 5 -->0
+Count min 6 -->0
+Count min 7 -->0
+--------This is cm number 19------------------
+Count min 0 -->1
+Count min 1 -->0
+Count min 2 -->0
+Count min 3 -->0
+Count min 4 -->0
+Count min 5 -->0
+Count min 6 -->0
+Count min 7 -->0
+--------This is cm number 20------------------
+Count min 0 -->1
+Count min 1 -->0
+Count min 2 -->0
+Count min 3 -->0
+Count min 4 -->0
+Count min 5 -->0
+Count min 6 -->0
+Count min 7 -->0
+--------This is cm number 21------------------
+Count min 0 -->1
+Count min 1 -->0
+Count min 2 -->0
+Count min 3 -->0
+Count min 4 -->0
+Count min 5 -->0
+Count min 6 -->0
+Count min 7 -->0
+--------This is cm number 22------------------
+Count min 0 -->1
+Count min 1 -->0
+Count min 2 -->0
+Count min 3 -->0
+Count min 4 -->0
+Count min 5 -->0
+Count min 6 -->0
+Count min 7 -->0
+--------This is cm number 23------------------
+Count min 0 -->1
+Count min 1 -->0
+Count min 2 -->0
+Count min 3 -->0
+Count min 4 -->0
+Count min 5 -->0
+Count min 6 -->0
+Count min 7 -->0
+--------This is cm number 24------------------
+Count min 0 -->1
+Count min 1 -->0
+Count min 2 -->0
+Count min 3 -->0
+Count min 4 -->0
+Count min 5 -->0
+Count min 6 -->0
+Count min 7 -->0
+--------This is cm number 25------------------
+Count min 0 -->1
+Count min 1 -->0
+Count min 2 -->0
+Count min 3 -->0
+Count min 4 -->0
+Count min 5 -->0
+Count min 6 -->0
+Count min 7 -->0
+--------This is cm number 26------------------
+Count min 0 -->1
+Count min 1 -->0
+Count min 2 -->0
+Count min 3 -->0
+Count min 4 -->0
+Count min 5 -->0
+Count min 6 -->0
+Count min 7 -->0
+--------This is cm number 27------------------
+Count min 0 -->1
+Count min 1 -->0
+Count min 2 -->0
+Count min 3 -->0
+Count min 4 -->0
+Count min 5 -->0
+Count min 6 -->0
+Count min 7 -->0
+--------This is cm number 28------------------
+Count min 0 -->1
+Count min 1 -->0
+Count min 2 -->0
+Count min 3 -->0
+Count min 4 -->0
+Count min 5 -->0
+Count min 6 -->0
+Count min 7 -->0
+--------This is cm number 29------------------
+Count min 0 -->1
+Count min 1 -->0
+Count min 2 -->0
+Count min 3 -->0
+Count min 4 -->0
+Count min 5 -->0
+Count min 6 -->0
+Count min 7 -->0
+--------This is cm number 30------------------
+Count min 0 -->1
+Count min 1 -->0
+Count min 2 -->0
+Count min 3 -->0
+Count min 4 -->0
+Count min 5 -->0
+Count min 6 -->0
+Count min 7 -->0
+--------This is cm number 31------------------
+Count min 0 -->1
+Count min 1 -->0
+Count min 2 -->0
+Count min 3 -->0
+Count min 4 -->0
+Count min 5 -->0
+Count min 6 -->0
+Count min 7 -->0
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

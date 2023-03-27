@@ -26,18 +26,33 @@ public class AppTest {
 
         //Adds two items to every countMin in HH
         for(CountMinSketch cm : hh.cms){
-            cm.add(0, 1);
+            cm.add(0, 0);
+            cm.add(1, 0);
+            cm.add(2, 0);
+            cm.add(3, 0);
+            cm.add(4, 0);
+            cm.add(5, 0);
+            cm.add(6, 0);
+            cm.add(7, 0);
+
         }
 
         //Update heavy hitter
-        hh.update(0, 50);
+        hh.update(7, 1);
 
 
         // Check values of heavy hitter count mins
         int index = 0;
         for(CountMinSketch cm : hh.cms){
-            System.out.println("This is cm number " + index);
-            System.out.println("Count of item 0 --> " + cm.estimateCount(0));
+            System.out.println("--------This is cm number " + index + "------------------");
+            System.out.println("Count min 0 -->" + cm.estimateCount(0));
+            System.out.println("Count min 1 -->" + cm.estimateCount(1));
+            System.out.println("Count min 2 -->" + cm.estimateCount(2));
+            System.out.println("Count min 3 -->" + cm.estimateCount(3));
+            System.out.println("Count min 4 -->" + cm.estimateCount(4));
+            System.out.println("Count min 5 -->" + cm.estimateCount(5));
+            System.out.println("Count min 6 -->" + cm.estimateCount(6));
+            System.out.println("Count min 7 -->" + cm.estimateCount(7));
             index++;
         }
 
