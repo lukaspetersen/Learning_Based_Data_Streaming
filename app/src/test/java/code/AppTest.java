@@ -7,7 +7,7 @@ import org.junit.Test;
 import java.math.BigInteger;
 import java.util.ArrayList;
 
-import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 public class AppTest {
@@ -26,38 +26,32 @@ public class AppTest {
 
         //Adds two items to every countMin in HH
         for(CountMinSketch cm : hh.cms){
-            cm.add(0, 0);
-            cm.add(1, 0);
-            cm.add(2, 0);
-            cm.add(3, 0);
-            cm.add(4, 0);
-            cm.add(5, 0);
-            cm.add(6, 0);
-            cm.add(7, 0);
-
+            for(int i = 0; i<7; i++){
+                cm.add(i,0);
+            }
         }
 
         //Update heavy hitter
         hh.update(7, 1);
 
+        //Layer 0, item 7 has been incremented
+        assertThat(hh.cms[0].estimateCount(7), is(1));
 
-        // Check values of heavy hitter count mins
-        int index = 0;
-        for(CountMinSketch cm : hh.cms){
-            System.out.println("--------This is cm number " + index + "------------------");
-            System.out.println("Count min 0 -->" + cm.estimateCount(0));
-            System.out.println("Count min 1 -->" + cm.estimateCount(1));
-            System.out.println("Count min 2 -->" + cm.estimateCount(2));
-            System.out.println("Count min 3 -->" + cm.estimateCount(3));
-            System.out.println("Count min 4 -->" + cm.estimateCount(4));
-            System.out.println("Count min 5 -->" + cm.estimateCount(5));
-            System.out.println("Count min 6 -->" + cm.estimateCount(6));
-            System.out.println("Count min 7 -->" + cm.estimateCount(7));
-            index++;
-        }
+        //Layer 1, item 3 has been incremented
+        assertThat(hh.cms[1].estimateCount(3), is(1));
+
+        //Layer 2, item 1 has been incremented
+        assertThat(hh.cms[2].estimateCount(1), is(1));
+
+        //Layer 3, item 0 has been incremented
+        assertThat(hh.cms[3].estimateCount(0), is(1));
 
 
-
+        //Testing for false positives
+        assertThat(hh.cms[0].estimateCount(6), is(not(equalTo(1))));
+        assertThat(hh.cms[0].estimateCount(5), is(not(equalTo(1))));
+        assertThat(hh.cms[1].estimateCount(5), is(not(equalTo(1))));
+        assertThat(hh.cms[2].estimateCount(3), is(not(equalTo(1))));
     }
 
 
