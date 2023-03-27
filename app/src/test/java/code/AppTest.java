@@ -4,8 +4,6 @@
 package code;
 
 import org.junit.Test;
-import java.math.BigInteger;
-import java.util.ArrayList;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -24,7 +22,7 @@ public class AppTest {
              hh.cms[i] = new CountMinSketch(20, 15, 1000003);
         }
 
-        //Adds two items to every countMin in HH
+        //Adds 7 items for each count min and initializes them to zero
         for(CountMinSketch cm : hh.cms){
             for(int i = 0; i<7; i++){
                 cm.add(i,0);
