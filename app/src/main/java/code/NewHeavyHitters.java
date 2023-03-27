@@ -12,10 +12,25 @@ public class NewHeavyHitters {
         this.n = n;
     }
 
-    public static List<String> query(List<String> list, int i, int n, int j) {
-        List<String> result = new ArrayList<>();
-        result.add("empty value");
-        return result;
+    public List<Integer> query(List<Integer> list, int n){
+        return list;
+    }
+
+
+    public void queryFrom(List<Integer> list, int i, int n, int j) {
+
+        int left = j*2;
+        int right = j*2+1;
+
+        if(i > 0){
+            if(cms[i-1].estimateCount(left) >= n){
+                queryFrom(list, i-1, n, j);
+            }
+            if(cms[i-1].estimateCount(right) >= n){
+                queryFrom(list, i-1, n, j);
+            }
+            list.add(j);
+        }
     }
 
     public void update(int j, int delta) {

@@ -3,7 +3,11 @@
  */
 package code;
 
+import org.checkerframework.checker.units.qual.A;
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -53,6 +57,36 @@ public class AppTest {
     }
 
 
+    @Test
+    public void testCountMinQuery(){
+
+        //Create heavy hitter object
+        NewHeavyHitters hh = new NewHeavyHitters(5);
+
+        //Initialize 32 HH count mins
+        hh.cms = new CountMinSketch[32];
+        for(int i = 0; i<32; i++){
+            hh.cms[i] = new CountMinSketch(20, 15, 1000003);
+        }
+
+        //Adds 7 items for each count min and initializes them to zero
+        for(CountMinSketch cm : hh.cms){
+            for(int i = 0; i<7; i++){
+                cm.add(i,0);
+            }
+        }
+
+        //Empty arrayList
+        ArrayList<Integer> heavyHittersList = new ArrayList<>();
+
+        //Query heavy hitters
+        hh.query(heavyHittersList, 0);
+
+
+
+
+
+    }
 
 
 }
