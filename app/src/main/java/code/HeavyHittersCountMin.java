@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class HeavyHittersCountMin {
 
+    /*
     private CountMinSketch countMinSketch;
     private ArrayList<String> heavyHitters;
     private int threshold;
@@ -25,7 +26,7 @@ public class HeavyHittersCountMin {
         return heavyHitters;
     }
 
-
+*/
 }
 
 

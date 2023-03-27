@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="code.AppTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-03-21T10:18:02" hostname="Fredriks-MacBook-Pro.local" time="0.007">
+<testsuite name="code.AppTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-03-27T08:56:24" hostname="Fredriks-MacBook-Pro.local" time="0.006">
   <properties/>
-  <testcase name="stringShouldBecomeStringAgain" classname="code.AppTest" time="0.007"/>
-  <system-out><![CDATA[hash int: 820275672
-this is the original stringHello my name is... slim shady!
-this is the remade string820275672
+  <testcase name="stringShouldBecomeStringAgain" classname="code.AppTest" time="0.006"/>
+  <system-out><![CDATA[code.CountMinSketch@35cabb2a
+code.CountMinSketch@564fabc8
+code.CountMinSketch@16d04d3d
+code.CountMinSketch@49ec71f8
+code.CountMinSketch@1d2adfbe
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

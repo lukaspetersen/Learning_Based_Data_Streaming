@@ -5,13 +5,33 @@ package code;
 
 import org.junit.Test;
 import java.math.BigInteger;
+import java.util.ArrayList;
+
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 public class AppTest {
 
     @Test
-    public void stringShouldBecomeStringAgain(){
+    public void countMinTest(){
+
+        ArrayList<CountMinSketch> cms = new ArrayList<>();
+
+        CountMinSketch cm1 = new CountMinSketch(20, 15, 1000003);
+        CountMinSketch cm2 = new CountMinSketch(20, 15, 1000003);
+        CountMinSketch cm3 = new CountMinSketch(20, 15, 1000003);
+        CountMinSketch cm4 = new CountMinSketch(20, 15, 1000003);
+        CountMinSketch cm5 = new CountMinSketch(20, 15, 1000003);
+
+        cms.add(cm1);
+        cms.add(cm2);
+        cms.add(cm3);
+        cms.add(cm4);
+        cms.add(cm5);
+
+        for(CountMinSketch cm : cms){
+            System.out.println(cm);
+        }
 
     }
 
