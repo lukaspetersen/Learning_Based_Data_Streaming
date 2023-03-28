@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="code.AppTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-03-27T12:04:13" hostname="Fredriks-MacBook-Pro.local" time="0.009">
+<testsuite name="code.AppTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-03-28T14:18:49" hostname="Fredriks-MacBook-Pro.local" time="0.024">
   <properties/>
-  <testcase name="testCountMinUpdate" classname="code.AppTest" time="0.009"/>
-  <system-out><![CDATA[]]></system-out>
+  <testcase name="testCountMinQuery" classname="code.AppTest" time="0.024"/>
+  <system-out><![CDATA[-- New Count min --
+0
+0
+0
+2
+-- New Count min --
+0
+2
+0
+0
+-- New Count min --
+2
+0
+0
+0
+I am a heavy hitter -->3
+]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

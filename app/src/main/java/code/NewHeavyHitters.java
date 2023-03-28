@@ -12,29 +12,31 @@ public class NewHeavyHitters {
         this.n = n;
     }
 
-    public List<Integer> query(List<Integer> list, int n){
+    public List<Integer> query(List<Integer> list){
+        queryFrom(list, 2, this.n, 0);
         return list;
     }
 
 
-    public void queryFrom(List<Integer> list, int i, int n, int j) {
-
-        int left = j*2;
-        int right = j*2+1;
+    public void queryFrom(List<Integer> list, int i, int n, int x) {
+        int left = x*2;
+        int right = x*2+1;
 
         if(i > 0){
             if(cms[i-1].estimateCount(left) >= n){
-                queryFrom(list, i-1, n, j);
+                queryFrom(list, i-1, n, left);
             }
             if(cms[i-1].estimateCount(right) >= n){
-                queryFrom(list, i-1, n, j);
+                queryFrom(list, i-1, n, right);
             }
-            list.add(j);
+        }
+        else{
+            list.add(x);
         }
     }
 
     public void update(int j, int delta) {
-        for (int i = 0; i < 32; i++) {
+        for (int i = 0; i < cms.length; i++) {
             cms[i].add((int) (j / Math.floor(Math.pow(2, i))), delta);
         }
     }
