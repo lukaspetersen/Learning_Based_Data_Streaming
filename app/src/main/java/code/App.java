@@ -16,7 +16,7 @@ public class App {
         //double epsilon = 0.01;
         int fakeEpsilon = 8000;
 
-        // ------------Importing dataset (AirBnB)------------
+        //Importing dataset
         InputStreamReader streamReader = new InputStreamReader(App.class.getClassLoader().getResourceAsStream("listings.csv"));
         CSVReader reader = new CSVReader(streamReader);
         String[] nextLine;
@@ -25,7 +25,7 @@ public class App {
             stringArr.add(nextLine[6]);
         }
 
-        //Preprocessing
+        //Type conversion methods
         HashMap<String, Integer> stringToInt = stringToInt(stringArr);
         List<Integer> listToInt = listToInt(stringArr, stringToInt);
 
@@ -35,7 +35,6 @@ public class App {
             hh.update(item,1);
         }
 
-        //Create heavy hitters list
         List<Integer> hhList = new ArrayList<>();
         hh.query(hhList);
 

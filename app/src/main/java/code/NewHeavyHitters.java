@@ -15,7 +15,6 @@ public class NewHeavyHitters {
         for(int i = 0; i<32; i++){
             cms[i] = new CountMinSketch(20, 15, 1000003);
         }
-
     }
 
     public List<Integer> query(List<Integer> list){

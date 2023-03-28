@@ -3,12 +3,9 @@
  */
 package code;
 
-import org.checkerframework.checker.units.qual.A;
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.List;
-
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 
@@ -63,36 +60,18 @@ public class AppTest {
         //Create heavy hitter object
         NewHeavyHitters hh = new NewHeavyHitters(3);
 
-        //Initialize 3 HH count mins
-        hh.cms = new CountMinSketch[32];
-        for(int i = 0; i<32; i++){
-            hh.cms[i] = new CountMinSketch(20, 15, 1000003);
-        }
-
         hh.update(3, 2);
         hh.update(8, 4);
         hh.update(12, 2);
-        hh.update(12, 5);
+        hh.update(15, 5);
 
         //Query heavy hitters
         ArrayList<Integer> heavyHittersList = new ArrayList<>();
         hh.query(heavyHittersList);
 
-
-        for(CountMinSketch cm : hh.cms){
-            System.out.println("-- New Count min --");
-            for(int i = 0; i<32; i++){
-                System.out.println(cm.estimateCount(i));
-            }
-        }
-
-        for(int i : heavyHittersList){
-            System.out.println("I am a heavy hitter -->" + i);
-        }
-
-
-
-
+        //Only leaf nodes 8 and 15 are heavy
+        assertThat(heavyHittersList.get(0), is(8));
+        assertThat(heavyHittersList.get(1), is(15));
 
     }
 
