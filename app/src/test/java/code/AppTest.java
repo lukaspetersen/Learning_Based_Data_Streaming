@@ -61,34 +61,27 @@ public class AppTest {
     public void testCountMinQuery(){
 
         //Create heavy hitter object
-        NewHeavyHitters hh = new NewHeavyHitters(1);
+        NewHeavyHitters hh = new NewHeavyHitters(3);
 
         //Initialize 3 HH count mins
-        hh.cms = new CountMinSketch[3];
-        for(int i = 0; i<3; i++){
+        hh.cms = new CountMinSketch[32];
+        for(int i = 0; i<32; i++){
             hh.cms[i] = new CountMinSketch(20, 15, 1000003);
         }
 
-        //Adds 4 items for each count min and initializes them to zero
-        for(CountMinSketch cm : hh.cms){
-            for(int i = 0; i<4; i++){
-                cm.add(i,0);
-            }
-        }
-
-        //Empty arrayList
-        ArrayList<Integer> heavyHittersList = new ArrayList<>();
-
-        //Adding one j bigger than zero
         hh.update(3, 2);
+        hh.update(8, 4);
+        hh.update(12, 2);
+        hh.update(12, 5);
 
         //Query heavy hitters
+        ArrayList<Integer> heavyHittersList = new ArrayList<>();
         hh.query(heavyHittersList);
 
 
         for(CountMinSketch cm : hh.cms){
             System.out.println("-- New Count min --");
-            for(int i = 0; i<4; i++){
+            for(int i = 0; i<32; i++){
                 System.out.println(cm.estimateCount(i));
             }
         }

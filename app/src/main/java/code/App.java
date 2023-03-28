@@ -13,7 +13,8 @@ public class App {
 
     public static void main(String[] args) throws IOException, CsvValidationException {
 
-        double epsilon = 0.01;
+        //double epsilon = 0.01;
+        int fakeEpsilon = 8000;
 
         // ------------Importing dataset (AirBnB)------------
         InputStreamReader streamReader = new InputStreamReader(App.class.getClassLoader().getResourceAsStream("listings.csv"));
@@ -28,22 +29,23 @@ public class App {
         HashMap<String, Integer> stringToInt = stringToInt(stringArr);
         List<Integer> listToInt = listToInt(stringArr, stringToInt);
 
-
         //Heavy hitters implementation
+        NewHeavyHitters hh = new NewHeavyHitters(fakeEpsilon);
+        for(int item : listToInt){
+            hh.update(item,1);
+        }
 
-
-
-
-
-
+        //Create heavy hitters list
+        List<Integer> hhList = new ArrayList<>();
+        hh.query(hhList);
 
         //Postprocessing
-        List<String> listToString = listToString(stringToInt, listToInt);
+        List<String> listToString = listToString(stringToInt, hhList);
 
-
-
-
-
+        //Print out
+        for(String item : listToString){
+            System.out.println(item);
+        }
 
 
 

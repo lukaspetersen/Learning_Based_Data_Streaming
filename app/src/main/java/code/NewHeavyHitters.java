@@ -1,6 +1,5 @@
 package code;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class NewHeavyHitters {
@@ -10,10 +9,17 @@ public class NewHeavyHitters {
 
     public NewHeavyHitters(int n){
         this.n = n;
+        this.cms = new CountMinSketch[32];
+
+        // Initializes count mins
+        for(int i = 0; i<32; i++){
+            cms[i] = new CountMinSketch(20, 15, 1000003);
+        }
+
     }
 
     public List<Integer> query(List<Integer> list){
-        queryFrom(list, 2, this.n, 0);
+        queryFrom(list, 32, this.n, 0);
         return list;
     }
 
