@@ -26,6 +26,8 @@ public class App {
             stringArr.add(nextLine[6]);
             l1Norm++;
         }
+
+        //Threshold based on frequency of all items
         threshold = l1Norm * epsilon;
 
         //Type conversion methods
