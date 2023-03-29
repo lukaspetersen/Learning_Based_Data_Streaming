@@ -3,9 +3,18 @@
  */
 package code;
 
+import com.opencsv.CSVReader;
 import org.junit.Test;
+import weka.classifiers.functions.SMO;
+import weka.core.Attribute;
+import weka.core.DenseInstance;
+import weka.core.Instances;
+import weka.core.converters.ConverterUtils.DataSource;
 
+import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.List;
+
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 
@@ -72,6 +81,40 @@ public class AppTest {
         //Only leaf nodes 8 and 15 are heavy
         assertThat(heavyHittersList.get(0), is(8));
         assertThat(heavyHittersList.get(1), is(15));
+
+    }
+
+
+    @Test
+    public void testSVM() throws Exception {
+
+        /*
+        //Importing data
+        InputStreamReader streamReader = new InputStreamReader(App.class.getClassLoader().getResourceAsStream("listings.csv"));
+        CSVReader reader = new CSVReader(streamReader);
+        String[] nextLine;
+        List<String> stringArr = new ArrayList<>();
+        while ((nextLine = reader.readNext()) != null) {
+            stringArr.add(nextLine[6]);
+        }
+
+
+        ArrayList<Attribute> attributes = new ArrayList<>();
+        attributes.add(new Attribute("attr_0"));
+
+        //Create dataset?
+        Instances data = new Instances("MyDataset", attributes, 0);
+
+        //Add instances to the dataset
+        for (String str : stringArr) {
+            DenseInstance instance = new DenseInstance(1);
+            instance.setValue(0, str);
+            data.add(instance);
+        }
+         */
+
+
+
 
     }
 
