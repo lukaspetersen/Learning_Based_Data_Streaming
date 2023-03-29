@@ -13,8 +13,9 @@ public class App {
 
     public static void main(String[] args) throws IOException, CsvValidationException {
 
-        //double epsilon = 0.01;
-        int fakeEpsilon = 8000;
+        int l1Norm = 0;
+        double epsilon = 0.01;
+        double threshold;
 
         //Importing dataset
         InputStreamReader streamReader = new InputStreamReader(App.class.getClassLoader().getResourceAsStream("listings.csv"));
@@ -23,14 +24,16 @@ public class App {
         List<String> stringArr = new ArrayList<>();
         while ((nextLine = reader.readNext()) != null) {
             stringArr.add(nextLine[6]);
+            l1Norm++;
         }
+        threshold = l1Norm * epsilon;
 
         //Type conversion methods
         HashMap<String, Integer> stringToInt = stringToInt(stringArr);
         List<Integer> listToInt = listToInt(stringArr, stringToInt);
 
         //Heavy hitters implementation
-        NewHeavyHitters hh = new NewHeavyHitters(fakeEpsilon);
+        NewHeavyHitters hh = new NewHeavyHitters(threshold);
         for(int item : listToInt){
             hh.update(item,1);
         }

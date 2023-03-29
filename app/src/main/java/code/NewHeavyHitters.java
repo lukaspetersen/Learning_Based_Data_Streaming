@@ -5,9 +5,9 @@ import java.util.List;
 public class NewHeavyHitters {
 
     public CountMinSketch[] cms;
-    private int n;
+    private double n;
 
-    public NewHeavyHitters(int n){
+    public NewHeavyHitters(double n){
         this.n = n;
         this.cms = new CountMinSketch[32];
 
@@ -23,7 +23,7 @@ public class NewHeavyHitters {
     }
 
 
-    public void queryFrom(List<Integer> list, int i, int n, int x) {
+    public void queryFrom(List<Integer> list, int i, double n, int x) {
         int left = x*2;
         int right = x*2+1;
 
