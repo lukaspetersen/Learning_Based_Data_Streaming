@@ -79,6 +79,7 @@ public class AppTest {
         hh.query(heavyHittersList);
 
         //Only leaf nodes 8 and 15 are heavy
+        assertThat(heavyHittersList.size(), is(2));
         assertThat(heavyHittersList.get(0), is(8));
         assertThat(heavyHittersList.get(1), is(15));
 
