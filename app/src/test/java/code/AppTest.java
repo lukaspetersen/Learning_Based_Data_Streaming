@@ -89,7 +89,7 @@ public class AppTest {
     @Test
     public void testSVM() throws Exception {
 
-        /*
+
         //Importing data
         InputStreamReader streamReader = new InputStreamReader(App.class.getClassLoader().getResourceAsStream("listings.csv"));
         CSVReader reader = new CSVReader(streamReader);
@@ -112,7 +112,7 @@ public class AppTest {
             instance.setValue(0, str);
             data.add(instance);
         }
-         */
+
 
 
 

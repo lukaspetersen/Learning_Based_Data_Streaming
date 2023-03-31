@@ -7,13 +7,13 @@ public class NewHeavyHitters {
     public CountMinSketch[] cms;
     private double n;
 
-    public NewHeavyHitters(double n){
+    public NewHeavyHitters(double n, double epsilon){
         this.n = n;
         this.cms = new CountMinSketch[32];
 
         // Initializes count mins
         for(int i = 0; i<32; i++){
-            cms[i] = new CountMinSketch(20, 15, 1000003);
+            cms[i] = new CountMinSketch(20, (int) Math.ceil(4/epsilon), 1000003);
         }
     }
 

@@ -35,7 +35,7 @@ public class App {
         List<Integer> listToInt = listToInt(stringArr, stringToInt);
 
         //Heavy hitters implementation
-        NewHeavyHitters hh = new NewHeavyHitters(threshold);
+        NewHeavyHitters hh = new NewHeavyHitters(threshold, epsilon);
         for(int item : listToInt){
             hh.update(item,1);
         }
@@ -54,6 +54,18 @@ public class App {
 
 
 
+        //Calculating actual frequency
+        Map<String, Long> actualFrequency = stringArr.stream()
+                .collect(Collectors.groupingBy(s -> s, Collectors.counting()));
+
+        int completeNumber = 0;
+        //Printing Estimated frequencies and Actual frequencies
+        for(String neighborhood : listToString){
+            System.out.println(" " + neighborhood + "-- Estimated Frequency: "
+                    + " --ACTUAL FREQUENCY: " + actualFrequency.get(neighborhood));
+
+            completeNumber += actualFrequency.get(neighborhood);
+        }
 
 
 
