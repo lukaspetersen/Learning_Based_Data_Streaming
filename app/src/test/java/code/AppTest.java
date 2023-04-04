@@ -3,17 +3,11 @@
  */
 package code;
 
-import com.opencsv.CSVReader;
 import org.junit.Test;
-import weka.classifiers.functions.SMO;
-import weka.core.Attribute;
-import weka.core.DenseInstance;
-import weka.core.Instances;
-import weka.core.converters.ConverterUtils.DataSource;
 
-import java.io.InputStreamReader;
+
 import java.util.ArrayList;
-import java.util.List;
+import smile.classification.SVM;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -24,7 +18,7 @@ public class AppTest {
     public void testCountMinUpdate(){
 
         //Create heavy hitter object
-        NewHeavyHitters hh = new NewHeavyHitters(5);
+        NewHeavyHitters hh = new NewHeavyHitters(5,0.01);
 
         //Initialize 32 HH count mins
         hh.cms = new CountMinSketch[32];
@@ -67,7 +61,7 @@ public class AppTest {
     public void testCountMinQuery(){
 
         //Create heavy hitter object
-        NewHeavyHitters hh = new NewHeavyHitters(3);
+        NewHeavyHitters hh = new NewHeavyHitters(3,0.01);
 
         hh.update(3, 2);
         hh.update(8, 4);
@@ -89,35 +83,11 @@ public class AppTest {
     @Test
     public void testSVM() throws Exception {
 
-
-        //Importing data
-        InputStreamReader streamReader = new InputStreamReader(App.class.getClassLoader().getResourceAsStream("listings.csv"));
-        CSVReader reader = new CSVReader(streamReader);
-        String[] nextLine;
-        List<String> stringArr = new ArrayList<>();
-        while ((nextLine = reader.readNext()) != null) {
-            stringArr.add(nextLine[6]);
-        }
-
-
-        ArrayList<Attribute> attributes = new ArrayList<>();
-        attributes.add(new Attribute("attr_0"));
-
-        //Create dataset?
-        Instances data = new Instances("MyDataset", attributes, 0);
-
-        //Add instances to the dataset
-        for (String str : stringArr) {
-            DenseInstance instance = new DenseInstance(1);
-            instance.setValue(0, str);
-            data.add(instance);
-        }
-
-
-
+        //Import python tensorflow model
 
 
     }
 
-
 }
+
+

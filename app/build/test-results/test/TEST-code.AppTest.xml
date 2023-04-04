@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="code.AppTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-03-30T12:14:43" hostname="fredriks-mbp.eduroam.net.au.dk" time="0.017">
+<testsuite name="code.AppTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-04-04T14:17:37" hostname="Fredriks-MBP" time="0.009">
   <properties/>
-  <testcase name="testCountMinQuery" classname="code.AppTest" time="0.017"/>
+  <testcase name="testSVM" classname="code.AppTest" time="0.001"/>
+  <testcase name="testCountMinQuery" classname="code.AppTest" time="0.005"/>
+  <testcase name="testCountMinUpdate" classname="code.AppTest" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

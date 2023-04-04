@@ -23,7 +23,8 @@ dependencies {
     implementation 'com.opencsv:opencsv:5.2'
     // This dependency is used by the application.
     implementation 'com.google.guava:guava:31.1-jre'
-    implementation group: 'nz.ac.waikato.cms.weka', name: 'weka-stable', version: '3.8.0'
+    implementation("com.github.haifengl:smile-core:3.0.1")
+
 }
 
 application {
